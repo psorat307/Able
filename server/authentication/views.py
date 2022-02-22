@@ -5,3 +5,6 @@ def home(request):
   
 def login(request):
   return render(request,'authentication/login.html')
+
+def registration(request):
+  return render(request,'authentication/registration.html')

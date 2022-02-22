@@ -1,19 +1,21 @@
 {% extends 'default.html' %} {% load static %} 
-{%block title%}Login{%endblock%}
+{%block title%}Registration{%endblock%}
 {%block description%}
 <div class="container">
 	<div class="row gx-5">
 		<div class="col col-lg-5 d-none d-md-block bg-light rounded">
 			<div class="row p-4">
-				<h1 class="display-6 fw-bold">Welcome to your Dashboard</h1>
+				<h1 class="display-6 fw-bold">Welcome to your dashboard</h1>
 			</div>
 			<div class="row p-4">
 				<span class="fs-4" style="color: #566474">
-					This is the homepage of lead management system, login now to begin
-				</span>
+					This is the homepage of lead management system, register now
 			</div>
 			<div class="row p-4">
-				<img src="{%static 'dashboard_img.svg'%}" alt="login svg" />
+				<img
+					src="{%static 'dashboard_img.svg'%}"
+					alt="register svg"
+				/>
 			</div>
 		</div>
 		<div
@@ -24,10 +26,31 @@
 				style="border-color: #dfe0e0"
 			>
 				<div class="row">
-					<h5 class="py-4">Login into your account</h5>
+					<h5 class="py-4">Register a new account</h5>
 				</div>
 				<div class="row">
+					{% comment %} first_name, last_name, email, password, confirm
+					password, phone number {% endcomment %}
 					<form>
+						<div class="row mb-3">
+							<div class="col">
+								<input
+									type="text"
+									class="form-control"
+									name="first_name"
+									placeholder="First name"
+								/>
+							</div>
+							<div class="col">
+								<input
+									type="text"
+									class="form-control"
+									name="last_name"
+									placeholder="Last name"
+								/>
+							</div>
+						</div>
+
 						<div class="mb-3">
 							<input
 								type="email"
@@ -45,11 +68,27 @@
 								placeholder="Enter Password"
 							/>
 						</div>
+						<div class="mb-3">
+							<input
+								type="password"
+								class="form-control"
+								name="password1"
+								placeholder="Confirm Password"
+							/>
+						</div>
+						<div class="mb-3">
+							<input
+								type="number"
+								class="form-control"
+								name="phone_no"
+								placeholder="Phone No."
+							/>
+						</div>
 						<button type="submit" class="btn btn-primary w-100 mt-5 mb-4">
-							Login now
+							Register now
 						</button>
                         <div class="extra">
-                            New here? <a href="/registration">  Register now </a>
+                            Already have an account? <a href="/login"> Login now </a>
                             <!-- urls.py and views.py config and routing remain  -->
                         </div>
 					</form>
